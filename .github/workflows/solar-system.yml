@@ -1,5 +1,9 @@
 name: Solar System Workflow
 
+permissions:
+  contents: read
+  packages: write
+
 on: 
   workflow_dispatch:
   push:
@@ -15,7 +19,7 @@ env:
     
 jobs:
     unit-testing:
-        name: Unit Testing
+        name: Unit Testing 
         runs-on: ubuntu-latest
         steps:
         - name: Checkout Repository
