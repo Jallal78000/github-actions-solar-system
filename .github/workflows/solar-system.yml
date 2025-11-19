@@ -84,6 +84,16 @@ jobs:
             registry: ghcr.io
             username: ${{ github.actor }}
             password: ${{ secrets.GITHUB_TOKEN }}
+        
+        - name: set Lower case repo owner
+          uses: echo "OWNER_LC=${ GitHub.repository.owner,, }" >> $GITHUB_ENV
+        
+        - name: Build and push
+          uses: docker/build-push-action@v6
+          with:
+            context: .
+            push: true
+            tags: ghcr.io/${{ env.OWNER_LC }}/solar-system:${{ github.sha }}
           
         
         
