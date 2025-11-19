@@ -104,7 +104,7 @@ jobs:
           with:
             context: .
             push: true
-            tags: ghcr.io/${{ env.OWNER_LC }}/solar-system:${{ github.sha }}
+            tags: 'ghcr.io/${{ GITHUB.REPOSITORY_OWNER }}/solar-system:${{ github.sha }}'
           
         
         
