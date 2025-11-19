@@ -74,7 +74,6 @@ jobs:
       name: docker
       needs: [unit-testing, code-coverage]
       permissions: 
-        contents: read
         packages: write
       runs-on: ubuntu-latest
       steps:
